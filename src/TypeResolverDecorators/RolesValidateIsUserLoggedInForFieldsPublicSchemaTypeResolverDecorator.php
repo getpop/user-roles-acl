@@ -1,7 +1,7 @@
 <?php
-namespace PoP\UserRolesACL\Conditional\UserState\TypeResolverDecorators;
+namespace PoP\UserRolesACL\TypeResolverDecorators;
 
-use PoP\UserRolesACL\Conditional\UserState\Environment;
+use PoP\UserRolesACL\Environment;
 use PoP\ComponentModel\TypeResolvers\TypeResolverInterface;
 use PoP\UserState\TypeResolverDecorators\AbstractValidateIsUserLoggedInForFieldsTypeResolverDecorator;
 

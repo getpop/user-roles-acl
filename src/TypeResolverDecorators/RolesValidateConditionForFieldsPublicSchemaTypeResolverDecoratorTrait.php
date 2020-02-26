@@ -1,5 +1,5 @@
 <?php
-namespace PoP\UserRolesACL\Conditional\UserState\TypeResolverDecorators;
+namespace PoP\UserRolesACL\TypeResolverDecorators;
 
 use PoP\API\TypeResolvers\RootTypeResolver;
 use PoP\API\TypeResolvers\SiteTypeResolver;

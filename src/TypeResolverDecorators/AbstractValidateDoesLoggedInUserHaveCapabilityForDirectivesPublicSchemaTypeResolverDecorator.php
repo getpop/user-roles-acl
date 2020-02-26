@@ -1,5 +1,5 @@
 <?php
-namespace PoP\UserRolesACL\Conditional\UserState\TypeResolverDecorators;
+namespace PoP\UserRolesACL\TypeResolverDecorators;
 
 use PoP\ComponentModel\TypeResolvers\TypeResolverInterface;
 use PoP\ComponentModel\Facades\Schema\FieldQueryInterpreterFacade;

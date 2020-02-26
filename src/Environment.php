@@ -1,5 +1,5 @@
 <?php
-namespace PoP\UserRolesACL\Conditional\UserState;
+namespace PoP\UserRolesACL;
 
 class Environment
 {

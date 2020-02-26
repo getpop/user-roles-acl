@@ -1,5 +1,5 @@
 <?php
-namespace PoP\UserRolesACL\Conditional\UserState\Hooks;
+namespace PoP\UserRolesACL\Hooks;
 
 use PoP\API\TypeResolvers\RootTypeResolver;
 use PoP\API\TypeResolvers\SiteTypeResolver;

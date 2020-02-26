@@ -1,7 +1,7 @@
 <?php
-namespace PoP\UserRolesACL\Conditional\UserState\Hooks;
+namespace PoP\UserRolesACL\Hooks;
 
-use PoP\UserRolesACL\Conditional\UserState\Environment;
+use PoP\UserRolesACL\Environment;
 use PoP\UserState\Hooks\AbstractMaybeDisableFieldsIfUserNotLoggedInPrivateSchemaHookSet;
 
 class MaybeDisableFieldsIfUserNotLoggedInPrivateSchemaHookSet extends AbstractMaybeDisableFieldsIfUserNotLoggedInPrivateSchemaHookSet
