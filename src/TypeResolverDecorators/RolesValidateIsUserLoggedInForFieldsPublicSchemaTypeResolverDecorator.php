@@ -3,7 +3,7 @@ namespace PoP\UserRolesACL\TypeResolverDecorators;
 
 use PoP\UserRolesACL\Environment;
 use PoP\ComponentModel\TypeResolvers\TypeResolverInterface;
-use PoP\UserState\TypeResolverDecorators\AbstractValidateIsUserLoggedInForFieldsTypeResolverDecorator;
+use PoP\UserStateAccessControl\TypeResolverDecorators\AbstractValidateIsUserLoggedInForFieldsTypeResolverDecorator;
 
 class RolesValidateIsUserLoggedInForFieldsPublicSchemaTypeResolverDecorator extends AbstractValidateIsUserLoggedInForFieldsTypeResolverDecorator
 {
