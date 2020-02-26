@@ -8,10 +8,6 @@ use PoP\UserRolesAccessControl\DirectiveResolvers\ValidateDoesLoggedInUserHaveAn
 
 abstract class AbstractValidateDoesLoggedInUserHaveRoleForFieldsPublicSchemaTypeResolverDecorator extends AbstractPublicSchemaTypeResolverDecorator
 {
-    protected function onlyForPublicSchema(): bool
-    {
-        return true;
-    }
     /**
      * By default, only the admin can see the roles from the users
      *
