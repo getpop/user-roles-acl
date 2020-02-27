@@ -1,13 +1,1 @@
 services:
-    _defaults:
-        bind:
-            PoP\Hooks\HooksAPIInterface: '@hooks_api'
-            PoP\Translation\TranslationAPIInterface: '@translation_api'
-
-    PoP\UserRolesACL\TypeResolverDecorators\:
-        resource: '../src/TypeResolverDecorators/*'
-        public: true
-
-    PoP\UserRolesACL\Hooks\:
-        resource: '../src/Hooks/*'
-        public: true
