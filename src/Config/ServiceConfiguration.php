@@ -32,34 +32,30 @@ class ServiceConfiguration
             );
         }
         if ($roles = Environment::anyRoleLoggedInUserMustHaveToAccessRolesFields()) {
-            foreach ($roles as $role) {
-                ContainerBuilderUtils::injectValuesIntoService(
-                    'access_control_manager',
-                    'addEntriesForFields',
-                    UserRolesAccessControlGroups::ROLES,
-                    [
-                        [RootTypeResolver::class, 'roles', $role],
-                        [SiteTypeResolver::class, 'roles', $role],
-                        [UserTypeResolver::class, 'roles', $role],
-                        [UserTypeResolver::class, 'capabilities', $role],
-                    ]
-                );
-            }
+            ContainerBuilderUtils::injectValuesIntoService(
+                'access_control_manager',
+                'addEntriesForFields',
+                UserRolesAccessControlGroups::ROLES,
+                [
+                    [RootTypeResolver::class, 'roles', $roles],
+                    [SiteTypeResolver::class, 'roles', $roles],
+                    [UserTypeResolver::class, 'roles', $roles],
+                    [UserTypeResolver::class, 'capabilities', $roles],
+                ]
+            );
         }
         if ($capabilities = Environment::anyCapabilityLoggedInUserMustHaveToAccessRolesFields()) {
-            foreach ($capabilities as $capability) {
-                ContainerBuilderUtils::injectValuesIntoService(
-                    'access_control_manager',
-                    'addEntriesForFields',
-                    UserRolesAccessControlGroups::CAPABILITIES,
-                    [
-                        [RootTypeResolver::class, 'roles', $capability],
-                        [SiteTypeResolver::class, 'roles', $capability],
-                        [UserTypeResolver::class, 'roles', $capability],
-                        [UserTypeResolver::class, 'capabilities', $capability],
-                    ]
-                );
-            }
+            ContainerBuilderUtils::injectValuesIntoService(
+                'access_control_manager',
+                'addEntriesForFields',
+                UserRolesAccessControlGroups::CAPABILITIES,
+                [
+                    [RootTypeResolver::class, 'roles', $capabilities],
+                    [SiteTypeResolver::class, 'roles', $capabilities],
+                    [UserTypeResolver::class, 'roles', $capabilities],
+                    [UserTypeResolver::class, 'capabilities', $capabilities],
+                ]
+            );
         }
     }
 }
