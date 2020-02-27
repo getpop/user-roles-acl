@@ -8,14 +8,14 @@ class Environment
         return isset($_ENV['USER_MUST_BE_LOGGED_IN_TO_ACCESS_ROLES_FIELDS']) ? strtolower($_ENV['USER_MUST_BE_LOGGED_IN_TO_ACCESS_ROLES_FIELDS']) == "true" : false;
     }
 
-    public static function roleLoggedInUserMustHaveToAccessRolesFields(): ?string
+    public static function anyRoleLoggedInUserMustHaveToAccessRolesFields(): array
     {
-        return isset($_ENV['ROLE_LOGGED_IN_USER_MUST_HAVE_TO_ACCESS_ROLES_FIELDS']) && $_ENV['ROLE_LOGGED_IN_USER_MUST_HAVE_TO_ACCESS_ROLES_FIELDS'] ? strtolower($_ENV['ROLE_LOGGED_IN_USER_MUST_HAVE_TO_ACCESS_ROLES_FIELDS']) : null;
+        return isset($_ENV['ANY_ROLE_LOGGED_IN_USER_MUST_HAVE_TO_ACCESS_ROLES_FIELDS']) ? json_decode($_ENV['ANY_ROLE_LOGGED_IN_USER_MUST_HAVE_TO_ACCESS_ROLES_FIELDS']) : [];
     }
 
-    public static function capabilityLoggedInUserMustHaveToAccessRolesFields(): ?string
+    public static function anyCapabilityLoggedInUserMustHaveToAccessRolesFields(): array
     {
-        return isset($_ENV['CAPABILITY_LOGGED_IN_USER_MUST_HAVE_TO_ACCESS_ROLES_FIELDS']) && $_ENV['CAPABILITY_LOGGED_IN_USER_MUST_HAVE_TO_ACCESS_ROLES_FIELDS'] ? strtolower($_ENV['CAPABILITY_LOGGED_IN_USER_MUST_HAVE_TO_ACCESS_ROLES_FIELDS']) : null;
+        return isset($_ENV['ANY_CAPABILITY_LOGGED_IN_USER_MUST_HAVE_TO_ACCESS_ROLES_FIELDS']) ? json_decode($_ENV['ANY_CAPABILITY_LOGGED_IN_USER_MUST_HAVE_TO_ACCESS_ROLES_FIELDS']) : [];
     }
 }
 

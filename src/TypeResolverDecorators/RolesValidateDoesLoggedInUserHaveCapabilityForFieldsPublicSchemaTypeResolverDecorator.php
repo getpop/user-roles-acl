@@ -10,9 +10,6 @@ class RolesValidateDoesLoggedInUserHaveCapabilityForFieldsPublicSchemaTypeResolv
 
     protected function getCapabilities(): array
     {
-        if ($capability = Environment::capabilityLoggedInUserMustHaveToAccessRolesFields()) {
-            return [$capability];
-        }
-        return [];
+        return Environment::anyCapabilityLoggedInUserMustHaveToAccessRolesFields();
     }
 }

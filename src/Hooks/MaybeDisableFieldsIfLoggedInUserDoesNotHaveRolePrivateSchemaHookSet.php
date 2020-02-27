@@ -10,9 +10,6 @@ class MaybeDisableFieldsIfLoggedInUserDoesNotHaveRolePrivateSchemaHookSet extend
 
     protected function getRoleNames(): array
     {
-        if ($roleName = Environment::roleLoggedInUserMustHaveToAccessRolesFields()) {
-            return [$roleName];
-        }
-        return [];
+        return Environment::anyRoleLoggedInUserMustHaveToAccessRolesFields();
     }
 }
