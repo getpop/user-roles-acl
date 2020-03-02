@@ -3,6 +3,11 @@ namespace PoP\UserRolesACL;
 
 class Environment
 {
+    public static function disableRolesFields(): bool
+    {
+        return isset($_ENV['DISABLE_ROLES_FIELDS']) ? strtolower($_ENV['DISABLE_ROLES_FIELDS']) == "true" : false;
+    }
+
     public static function userMustBeLoggedInToAccessRolesFields(): bool
     {
         return isset($_ENV['USER_MUST_BE_LOGGED_IN_TO_ACCESS_ROLES_FIELDS']) ? strtolower($_ENV['USER_MUST_BE_LOGGED_IN_TO_ACCESS_ROLES_FIELDS']) == "true" : false;

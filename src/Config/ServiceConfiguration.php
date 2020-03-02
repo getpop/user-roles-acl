@@ -9,6 +9,7 @@ use PoP\ComponentModel\Container\ContainerBuilderUtils;
 use PoP\UserRolesAccessControl\Services\AccessControlGroups as UserRolesAccessControlGroups;
 use PoP\UserRolesACL\Environment;
 use PoP\UserStateAccessControl\ConfigurationEntries\UserStates;
+use PoP\AccessControl\Services\AccessControlGroups as AccessControlGroups;
 use PoP\UserStateAccessControl\Services\AccessControlGroups as UserStateAccessControlGroups;
 
 class ServiceConfiguration
@@ -18,6 +19,19 @@ class ServiceConfiguration
     protected static function configure()
     {
         // Inject the access control entries
+        if (Environment::disableRolesFields()) {
+            ContainerBuilderUtils::injectValuesIntoService(
+                'access_control_manager',
+                'addEntriesForFields',
+                AccessControlGroups::DISABLED,
+                [
+                    [RootTypeResolver::class, 'roles'],
+                    [SiteTypeResolver::class, 'roles'],
+                    [UserTypeResolver::class, 'roles'],
+                    [UserTypeResolver::class, 'capabilities'],
+                ]
+            );
+        }
         if (Environment::userMustBeLoggedInToAccessRolesFields()) {
             ContainerBuilderUtils::injectValuesIntoService(
                 'access_control_manager',
