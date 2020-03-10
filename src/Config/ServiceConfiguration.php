@@ -28,6 +28,8 @@ class ServiceConfiguration
                     [RootTypeResolver::class, 'roles'],
                     [SiteTypeResolver::class, 'roles'],
                     [UserTypeResolver::class, 'roles'],
+                    [RootTypeResolver::class, 'capabilities'],
+                    [SiteTypeResolver::class, 'capabilities'],
                     [UserTypeResolver::class, 'capabilities'],
                 ]
             );
@@ -41,6 +43,8 @@ class ServiceConfiguration
                     [RootTypeResolver::class, 'roles', UserStates::IN],
                     [SiteTypeResolver::class, 'roles', UserStates::IN],
                     [UserTypeResolver::class, 'roles', UserStates::IN],
+                    [RootTypeResolver::class, 'capabilities', UserStates::IN],
+                    [SiteTypeResolver::class, 'capabilities', UserStates::IN],
                     [UserTypeResolver::class, 'capabilities', UserStates::IN],
                 ]
             );
@@ -54,6 +58,8 @@ class ServiceConfiguration
                     [RootTypeResolver::class, 'roles', $roles],
                     [SiteTypeResolver::class, 'roles', $roles],
                     [UserTypeResolver::class, 'roles', $roles],
+                    [RootTypeResolver::class, 'capabilities', $roles],
+                    [SiteTypeResolver::class, 'capabilities', $roles],
                     [UserTypeResolver::class, 'capabilities', $roles],
                 ]
             );
@@ -67,6 +73,8 @@ class ServiceConfiguration
                     [RootTypeResolver::class, 'roles', $capabilities],
                     [SiteTypeResolver::class, 'roles', $capabilities],
                     [UserTypeResolver::class, 'roles', $capabilities],
+                    [RootTypeResolver::class, 'capabilities', $capabilities],
+                    [SiteTypeResolver::class, 'capabilities', $capabilities],
                     [UserTypeResolver::class, 'capabilities', $capabilities],
                 ]
             );
