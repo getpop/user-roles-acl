@@ -5,7 +5,6 @@ use PoP\Root\Component\AbstractComponent;
 use PoP\Root\Component\YAMLServicesTrait;
 use PoP\Root\Component\CanDisableComponentTrait;
 use PoP\UserRolesACL\Config\ServiceConfiguration;
-use PoP\ComponentModel\Container\ContainerBuilderUtils;
 use PoP\UserRolesAccessControl\Component as UserRolesAccessControlComponent;
 
 /**
@@ -31,19 +30,5 @@ class Component extends AbstractComponent
     protected static function resolveEnabled()
     {
         return UserRolesAccessControlComponent::isEnabled();
-    }
-
-    /**
-     * Boot component
-     *
-     * @return void
-     */
-    public static function boot()
-    {
-        parent::boot();
-
-        // Initialize all classes
-        // ContainerBuilderUtils::instantiateNamespaceServices(__NAMESPACE__.'\\Hooks');
-        // ContainerBuilderUtils::attachTypeResolverDecoratorsFromNamespace(__NAMESPACE__.'\\TypeResolverDecorators');
     }
 }
