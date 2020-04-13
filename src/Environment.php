@@ -23,4 +23,3 @@ class Environment
         return isset($_ENV['ANY_CAPABILITY_LOGGED_IN_USER_MUST_HAVE_TO_ACCESS_ROLES_FIELDS']) ? json_decode($_ENV['ANY_CAPABILITY_LOGGED_IN_USER_MUST_HAVE_TO_ACCESS_ROLES_FIELDS']) : [];
     }
 }
-
