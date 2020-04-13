@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace PoP\UserRolesACL\Config;
 
 use PoP\Engine\TypeResolvers\RootTypeResolver;
