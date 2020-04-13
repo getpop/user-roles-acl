@@ -1,7 +1,6 @@
 <?php
 namespace PoP\UserRolesACL\Config;
 
-use PoP\AccessControl\Schema\SchemaModes;
 use PoP\Engine\TypeResolvers\RootTypeResolver;
 use PoP\Users\TypeResolvers\UserTypeResolver;
 use PoP\Root\Component\PHPServiceConfigurationTrait;
