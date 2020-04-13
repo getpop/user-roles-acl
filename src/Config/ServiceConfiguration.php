@@ -1,8 +1,8 @@
 <?php
 namespace PoP\UserRolesACL\Config;
 
-use PoP\API\TypeResolvers\RootTypeResolver;
-use PoP\API\TypeResolvers\SiteTypeResolver;
+use PoP\AccessControl\Schema\SchemaModes;
+use PoP\Engine\TypeResolvers\RootTypeResolver;
 use PoP\Users\TypeResolvers\UserTypeResolver;
 use PoP\Root\Component\PHPServiceConfigurationTrait;
 use PoP\ComponentModel\Container\ContainerBuilderUtils;
@@ -26,10 +26,8 @@ class ServiceConfiguration
                 AccessControlGroups::DISABLED,
                 [
                     [RootTypeResolver::class, 'roles'],
-                    [SiteTypeResolver::class, 'roles'],
                     [UserTypeResolver::class, 'roles'],
                     [RootTypeResolver::class, 'capabilities'],
-                    [SiteTypeResolver::class, 'capabilities'],
                     [UserTypeResolver::class, 'capabilities'],
                 ]
             );
@@ -41,10 +39,8 @@ class ServiceConfiguration
                 UserStateAccessControlGroups::STATE,
                 [
                     [RootTypeResolver::class, 'roles', UserStates::IN],
-                    [SiteTypeResolver::class, 'roles', UserStates::IN],
                     [UserTypeResolver::class, 'roles', UserStates::IN],
                     [RootTypeResolver::class, 'capabilities', UserStates::IN],
-                    [SiteTypeResolver::class, 'capabilities', UserStates::IN],
                     [UserTypeResolver::class, 'capabilities', UserStates::IN],
                 ]
             );
@@ -56,10 +52,8 @@ class ServiceConfiguration
                 UserRolesAccessControlGroups::ROLES,
                 [
                     [RootTypeResolver::class, 'roles', $roles],
-                    [SiteTypeResolver::class, 'roles', $roles],
                     [UserTypeResolver::class, 'roles', $roles],
                     [RootTypeResolver::class, 'capabilities', $roles],
-                    [SiteTypeResolver::class, 'capabilities', $roles],
                     [UserTypeResolver::class, 'capabilities', $roles],
                 ]
             );
@@ -71,10 +65,8 @@ class ServiceConfiguration
                 UserRolesAccessControlGroups::CAPABILITIES,
                 [
                     [RootTypeResolver::class, 'roles', $capabilities],
-                    [SiteTypeResolver::class, 'roles', $capabilities],
                     [UserTypeResolver::class, 'roles', $capabilities],
                     [RootTypeResolver::class, 'capabilities', $capabilities],
-                    [SiteTypeResolver::class, 'capabilities', $capabilities],
                     [UserTypeResolver::class, 'capabilities', $capabilities],
                 ]
             );
