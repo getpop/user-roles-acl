@@ -1,2 +1,2 @@
 <?php
-\PoP\UserRolesACL\Component::init();
+//\PoP\UserRolesACL\Component::initialize();
