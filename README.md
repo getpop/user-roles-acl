@@ -20,12 +20,13 @@ Via Composer
 composer require getpop/user-roles-acl
 ```
 
-<!--
 ## Usage
 
+Initialize the component:
+
 ``` php
+\PoP\UserRolesACL\Component::initialize();
 ```
--->
 
 ## Standards
 
