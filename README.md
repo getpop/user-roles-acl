@@ -25,7 +25,9 @@ composer require getpop/user-roles-acl
 Initialize the component:
 
 ``` php
-\PoP\UserRolesACL\Component::initialize();
+\PoP\Root\ComponentLoader::initializeComponents([
+    \PoP\UserRolesACL\Component::class,
+]);
 ```
 
 ## Standards
