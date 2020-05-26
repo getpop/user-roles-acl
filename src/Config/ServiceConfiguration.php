@@ -18,7 +18,7 @@ class ServiceConfiguration
 {
     use PHPServiceConfigurationTrait;
 
-    protected static function configure()
+    protected static function configure(): void
     {
         // Inject the access control entries
         if (Environment::disableRolesFields()) {
