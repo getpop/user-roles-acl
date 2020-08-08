@@ -2,17 +2,17 @@
 
 declare(strict_types=1);
 
-namespace PoP\UserRolesACL\Config;
+namespace PoPSchema\UserRolesACL\Config;
 
 use PoP\Engine\TypeResolvers\RootTypeResolver;
-use PoP\Users\TypeResolvers\UserTypeResolver;
+use PoPSchema\Users\TypeResolvers\UserTypeResolver;
 use PoP\Root\Component\PHPServiceConfigurationTrait;
 use PoP\ComponentModel\Container\ContainerBuilderUtils;
-use PoP\UserRolesAccessControl\Services\AccessControlGroups as UserRolesAccessControlGroups;
-use PoP\UserRolesACL\Environment;
-use PoP\UserStateAccessControl\ConfigurationEntries\UserStates;
+use PoPSchema\UserRolesAccessControl\Services\AccessControlGroups as UserRolesAccessControlGroups;
+use PoPSchema\UserRolesACL\Environment;
+use PoPSchema\UserStateAccessControl\ConfigurationEntries\UserStates;
 use PoP\AccessControl\Services\AccessControlGroups as AccessControlGroups;
-use PoP\UserStateAccessControl\Services\AccessControlGroups as UserStateAccessControlGroups;
+use PoPSchema\UserStateAccessControl\Services\AccessControlGroups as UserStateAccessControlGroups;
 
 class ServiceConfiguration
 {

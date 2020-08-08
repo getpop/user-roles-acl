@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PoP\UserRolesACL;
+namespace PoPSchema\UserRolesACL;
 
 class Environment
 {
