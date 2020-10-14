@@ -4,14 +4,15 @@ declare(strict_types=1);
 
 namespace PoPSchema\UserRolesACL\Config;
 
+use PoPSchema\UserRolesACL\Environment;
 use PoP\Engine\TypeResolvers\RootTypeResolver;
 use PoPSchema\Users\TypeResolvers\UserTypeResolver;
 use PoP\Root\Component\PHPServiceConfigurationTrait;
 use PoP\ComponentModel\Container\ContainerBuilderUtils;
-use PoPSchema\UserRolesAccessControl\Services\AccessControlGroups as UserRolesAccessControlGroups;
-use PoPSchema\UserRolesACL\Environment;
+use PoP\AccessControl\Services\AccessControlManagerInterface;
 use PoPSchema\UserStateAccessControl\ConfigurationEntries\UserStates;
 use PoP\AccessControl\Services\AccessControlGroups as AccessControlGroups;
+use PoPSchema\UserRolesAccessControl\Services\AccessControlGroups as UserRolesAccessControlGroups;
 use PoPSchema\UserStateAccessControl\Services\AccessControlGroups as UserStateAccessControlGroups;
 
 class ServiceConfiguration
@@ -23,7 +24,7 @@ class ServiceConfiguration
         // Inject the access control entries
         if (Environment::disableRolesFields()) {
             ContainerBuilderUtils::injectValuesIntoService(
-                'access_control_manager',
+                AccessControlManagerInterface::class,
                 'addEntriesForFields',
                 AccessControlGroups::DISABLED,
                 [
@@ -36,7 +37,7 @@ class ServiceConfiguration
         }
         if (Environment::userMustBeLoggedInToAccessRolesFields()) {
             ContainerBuilderUtils::injectValuesIntoService(
-                'access_control_manager',
+                AccessControlManagerInterface::class,
                 'addEntriesForFields',
                 UserStateAccessControlGroups::STATE,
                 [
@@ -49,7 +50,7 @@ class ServiceConfiguration
         }
         if ($roles = Environment::anyRoleLoggedInUserMustHaveToAccessRolesFields()) {
             ContainerBuilderUtils::injectValuesIntoService(
-                'access_control_manager',
+                AccessControlManagerInterface::class,
                 'addEntriesForFields',
                 UserRolesAccessControlGroups::ROLES,
                 [
@@ -62,7 +63,7 @@ class ServiceConfiguration
         }
         if ($capabilities = Environment::anyCapabilityLoggedInUserMustHaveToAccessRolesFields()) {
             ContainerBuilderUtils::injectValuesIntoService(
-                'access_control_manager',
+                AccessControlManagerInterface::class,
                 'addEntriesForFields',
                 UserRolesAccessControlGroups::CAPABILITIES,
                 [
